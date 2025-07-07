@@ -3,16 +3,19 @@
 \name{clin_add_titles}
 \alias{clin_add_titles}
 \alias{clin_add_footnotes}
-\title{Add page footer}
+\alias{clin_add_footnote_page}
+\title{Add titles, footnotes, or a footnote page to a clintable or clindoc}
 \usage{
 clin_add_titles(x, ls = NULL, ft = NULL)
 
 clin_add_footnotes(x, ls = NULL, ft = NULL)
+
+clin_add_footnote_page(x, ls = NULL, ft = NULL)
 }
 \arguments{
 \item{x}{a clintable object}
 
-\item{ls}{a list of character vectors, no more than 3 elements to a vector}
+\item{ls}{a list of character vectors, no more than 2 elements to a vector}
 
 \item{ft}{A flextable object to use as the header}
 }
@@ -20,24 +23,39 @@ clin_add_footnotes(x, ls = NULL, ft = NULL)
 A clintable object
 }
 \description{
-This function adds a text, passed as argument, into .docx bottom colontitle (page footer). As a
-result, the text is repeated on each page of the document. Takes a list of lists as an input parameter,
-where each sublist represents a separate line (or row) of text. There is also a possibility to add a row
-with both left- and right-aligned text. To do so - simply pass two items to a sublist instead of one.
+This function allows you to attach specified titles, footnotes, or a footnote page
+into clintable or clindoc object. The input can be provided either as a list of character
+vectors, or pre-built flextable.
+}
+\details{
+When using the \code{ls} parameter, each element of the list can contain no more than two
+elements within each character vector. In a title, a single element will align center.
+In a footnote, a single element will align to the left. For both titles and footnotes,
+two elements will align split down the middle, with the left side element aligning left
+and the right side element aligning right. In a title, a single left aligned element,
+provide a 2 element character vector with duplicate values.
 }
 \examples{
-clintable(mtcars) |> 
+clintable(mtcars) |>
   clin_add_titles(
     list(
-      c("Left", "Center", "Right"),
+      c("Left", "Right"),
       c("Just the middle")
     )
-  ) |> 
+  ) |>
   clin_add_footnotes(
     list(
       c(
-        "Here's a footnote.", 
+        "Here's a footnote.",
         format(Sys.time(), "\%H:\%M \%A, \%B \%d, \%Y")
+      )
+    )
+  ) |>
+  clin_add_footnote_page(
+    list(
+      c(
+        "Use when you have a lot of footnotes",
+        "And you don't want to put them on every page"
       )
     )
   )

@@ -1,7 +1,7 @@
 Package: clinify
 Type: Package
 Title: Clinical Table Styling Tools and Utilities
-Version: 0.1.2
+Version: 0.3.0
 Authors@R: c(
     person(given = "Mike",
            family = "Stackhouse",
@@ -16,8 +16,8 @@ Authors@R: c(
            role = "cph"),
     person(given = "Incyte Corporation", role="cph"))
 Depends: R (>= 4.2)
-Imports: flextable, officer, magrittr, dplyr, knitr, htmltools,
-        tidyselect, zoo
+Imports: flextable, officer (>= 0.6.9), magrittr, dplyr, knitr,
+        htmltools, tidyselect, zoo
 Suggests: rmarkdown, testthat (>= 3.0.0), Tplyr, rvest, withr, xml2
 Description: The primary motivation of this package is to take the things that are great about the R packages 'flextable' <https://davidgohel.github.io/flextable/> and 'officer' <https://davidgohel.github.io/officer/>, take the standard and complex pieces of formatting clinical tables for regulatory use, and simplify the tedious pieces. 
 License: Apache License (>= 2)
@@ -27,8 +27,9 @@ Config/testthat/edition: 3
 VignetteBuilder: knitr
 URL: https://atorus-research.github.io/clinify/
 NeedsCompilation: no
-Packaged: 2025-03-11 00:59:23 UTC; mstackhouse
-Author: Mike Stackhouse [aut, cre] (<https://orcid.org/0000-0001-6030-723X>),
+Packaged: 2025-07-07 17:39:03 UTC; mstackhouse
+Author: Mike Stackhouse [aut, cre] (ORCID:
+    <https://orcid.org/0000-0001-6030-723X>),
   Ross Didenko [aut],
   Yevhenii Boiko [aut],
   Marat Zakirov [ctb],
@@ -37,4 +38,4 @@ Author: Mike Stackhouse [aut, cre] (<https://orcid.org/0000-0001-6030-723X>),
   Incyte Corporation [cph]
 Maintainer: Mike Stackhouse <mike.stackhouse@atorusresearch.com>
 Repository: CRAN
-Date/Publication: 2025-03-13 12:10:10 UTC
+Date/Publication: 2025-07-07 18:00:02 UTC
