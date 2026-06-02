@@ -480,7 +480,7 @@ look.</p>
 <span id="cb3-13"><a href="#cb3-13" tabindex="-1"></a></span>
 <span id="cb3-14"><a href="#cb3-14" tabindex="-1"></a>  <span class="co"># Remove blank bottoms</span></span>
 <span id="cb3-15"><a href="#cb3-15" tabindex="-1"></a>  blk_inds <span class="ot">&lt;-</span> <span class="fu">which</span>(</span>
-<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    x<span class="sc">$</span>header<span class="sc">$</span>dataset <span class="sc">==</span> <span class="st">&quot;&quot;</span> <span class="sc">|</span> x<span class="sc">$</span>header<span class="sc">$</span>dataset <span class="sc">==</span> <span class="st">&quot; &quot;</span>,</span>
+<span id="cb3-16"><a href="#cb3-16" tabindex="-1"></a>    <span class="fu">mapply</span>(trimws, x<span class="sc">$</span>header<span class="sc">$</span>dataset) <span class="sc">==</span> <span class="st">&quot;&quot;</span>,</span>
 <span id="cb3-17"><a href="#cb3-17" tabindex="-1"></a>    <span class="at">arr.ind =</span> <span class="cn">TRUE</span></span>
 <span id="cb3-18"><a href="#cb3-18" tabindex="-1"></a>  )</span>
 <span id="cb3-19"><a href="#cb3-19" tabindex="-1"></a>  <span class="co"># Want to ignore bottom row</span></span>
