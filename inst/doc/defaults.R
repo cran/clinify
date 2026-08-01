@@ -36,10 +36,10 @@ knitr::opts_chunk$set(
 #   x <- flextable::line_spacing(x, space = 1, part = "all")
 #   # Setup the cell padding.
 #   x <- flextable::padding(x, part = "all", padding.bottom = 0, padding.top = 0)
-#   x <- flextable::set_table_properties(
-#     x,
-#     layout = "fixed"
-#   )
+#   # Fix the layout without discarding the rest of the table's properties.
+#   # set_table_properties() rebuilds them all, which would reset the table's
+#   # alignment on the page and the Word accessibility fields.
+#   x$properties$layout <- "fixed"
 #   # Automatically find and update a pagenum string
 #   x <- clin_replace_pagenums(x)
 #   x
@@ -68,10 +68,10 @@ knitr::opts_chunk$set(
 #   # Setup the cell padding.
 #   x <- flextable::padding(x, part = "all", padding.bottom = 0, padding.top = 0)
 # 
-#   x <- flextable::set_table_properties(
-#     x,
-#     layout = "fixed"
-#   )
+#   # Fix the layout without discarding the rest of the table's properties.
+#   # set_table_properties() rebuilds them all, which would reset the table's
+#   # alignment on the page and the Word accessibility fields.
+#   x$properties$layout <- "fixed"
 #   # Automatically find and update a pagenum string
 #   x <- clin_replace_pagenums(x)
 #   x
@@ -125,10 +125,10 @@ knitr::opts_chunk$set(
 #   x <- flextable::fontsize(x, part = "all", size = 9)
 # 
 #   # Set table's layout.
-#   x <- flextable::set_table_properties(
-#     x,
-#     layout = "fixed"
-#   )
+#   # Fix the layout without discarding the rest of the table's properties.
+#   # set_table_properties() rebuilds them all, which would reset the table's
+#   # alignment on the page and the Word accessibility fields.
+#   x$properties$layout <- "fixed"
 # 
 #   x
 # }

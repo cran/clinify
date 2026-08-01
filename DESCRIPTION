@@ -1,7 +1,7 @@
 Package: clinify
 Type: Package
 Title: Clinical Table Styling Tools and Utilities
-Version: 0.3.1
+Version: 0.4.0
 Authors@R: c(
     person(given = "Mike",
            family = "Stackhouse",
@@ -27,7 +27,7 @@ Config/testthat/edition: 3
 VignetteBuilder: knitr
 URL: https://atorus-research.github.io/clinify/
 NeedsCompilation: no
-Packaged: 2026-06-02 18:47:59 UTC; mstackhouse
+Packaged: 2026-08-01 15:05:19 UTC; mstackhouse
 Author: Mike Stackhouse [aut, cre] (ORCID:
     <https://orcid.org/0000-0001-6030-723X>),
   Ross Didenko [aut],
@@ -38,4 +38,4 @@ Author: Mike Stackhouse [aut, cre] (ORCID:
   Incyte Corporation [cph]
 Maintainer: Mike Stackhouse <mike.stackhouse@atorusresearch.com>
 Repository: CRAN
-Date/Publication: 2026-06-02 19:10:03 UTC
+Date/Publication: 2026-08-01 20:20:02 UTC

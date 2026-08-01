@@ -422,10 +422,10 @@ look.</p>
 <span id="cb2-14"><a href="#cb2-14" tabindex="-1"></a>  x <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">line_spacing</span>(x, <span class="at">space =</span> <span class="dv">1</span>, <span class="at">part =</span> <span class="st">&quot;all&quot;</span>)</span>
 <span id="cb2-15"><a href="#cb2-15" tabindex="-1"></a>  <span class="co"># Setup the cell padding.</span></span>
 <span id="cb2-16"><a href="#cb2-16" tabindex="-1"></a>  x <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">padding</span>(x, <span class="at">part =</span> <span class="st">&quot;all&quot;</span>, <span class="at">padding.bottom =</span> <span class="dv">0</span>, <span class="at">padding.top =</span> <span class="dv">0</span>)</span>
-<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>  x <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">set_table_properties</span>(</span>
-<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>    x,</span>
-<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>    <span class="at">layout =</span> <span class="st">&quot;fixed&quot;</span></span>
-<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>  )</span>
+<span id="cb2-17"><a href="#cb2-17" tabindex="-1"></a>  <span class="co"># Fix the layout without discarding the rest of the table&#39;s properties.</span></span>
+<span id="cb2-18"><a href="#cb2-18" tabindex="-1"></a>  <span class="co"># set_table_properties() rebuilds them all, which would reset the table&#39;s</span></span>
+<span id="cb2-19"><a href="#cb2-19" tabindex="-1"></a>  <span class="co"># alignment on the page and the Word accessibility fields.</span></span>
+<span id="cb2-20"><a href="#cb2-20" tabindex="-1"></a>  x<span class="sc">$</span>properties<span class="sc">$</span>layout <span class="ot">&lt;-</span> <span class="st">&quot;fixed&quot;</span></span>
 <span id="cb2-21"><a href="#cb2-21" tabindex="-1"></a>  <span class="co"># Automatically find and update a pagenum string</span></span>
 <span id="cb2-22"><a href="#cb2-22" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">clin_replace_pagenums</span>(x)</span>
 <span id="cb2-23"><a href="#cb2-23" tabindex="-1"></a>  x</span>
@@ -454,10 +454,10 @@ look.</p>
 <span id="cb2-46"><a href="#cb2-46" tabindex="-1"></a>  <span class="co"># Setup the cell padding.</span></span>
 <span id="cb2-47"><a href="#cb2-47" tabindex="-1"></a>  x <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">padding</span>(x, <span class="at">part =</span> <span class="st">&quot;all&quot;</span>, <span class="at">padding.bottom =</span> <span class="dv">0</span>, <span class="at">padding.top =</span> <span class="dv">0</span>)</span>
 <span id="cb2-48"><a href="#cb2-48" tabindex="-1"></a></span>
-<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>  x <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">set_table_properties</span>(</span>
-<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>    x,</span>
-<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a>    <span class="at">layout =</span> <span class="st">&quot;fixed&quot;</span></span>
-<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a>  )</span>
+<span id="cb2-49"><a href="#cb2-49" tabindex="-1"></a>  <span class="co"># Fix the layout without discarding the rest of the table&#39;s properties.</span></span>
+<span id="cb2-50"><a href="#cb2-50" tabindex="-1"></a>  <span class="co"># set_table_properties() rebuilds them all, which would reset the table&#39;s</span></span>
+<span id="cb2-51"><a href="#cb2-51" tabindex="-1"></a>  <span class="co"># alignment on the page and the Word accessibility fields.</span></span>
+<span id="cb2-52"><a href="#cb2-52" tabindex="-1"></a>  x<span class="sc">$</span>properties<span class="sc">$</span>layout <span class="ot">&lt;-</span> <span class="st">&quot;fixed&quot;</span></span>
 <span id="cb2-53"><a href="#cb2-53" tabindex="-1"></a>  <span class="co"># Automatically find and update a pagenum string</span></span>
 <span id="cb2-54"><a href="#cb2-54" tabindex="-1"></a>  x <span class="ot">&lt;-</span> <span class="fu">clin_replace_pagenums</span>(x)</span>
 <span id="cb2-55"><a href="#cb2-55" tabindex="-1"></a>  x</span>
@@ -512,10 +512,10 @@ look.</p>
 <span id="cb3-45"><a href="#cb3-45" tabindex="-1"></a>  x <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">fontsize</span>(x, <span class="at">part =</span> <span class="st">&quot;all&quot;</span>, <span class="at">size =</span> <span class="dv">9</span>)</span>
 <span id="cb3-46"><a href="#cb3-46" tabindex="-1"></a></span>
 <span id="cb3-47"><a href="#cb3-47" tabindex="-1"></a>  <span class="co"># Set table&#39;s layout.</span></span>
-<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a>  x <span class="ot">&lt;-</span> flextable<span class="sc">::</span><span class="fu">set_table_properties</span>(</span>
-<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a>    x,</span>
-<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a>    <span class="at">layout =</span> <span class="st">&quot;fixed&quot;</span></span>
-<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a>  )</span>
+<span id="cb3-48"><a href="#cb3-48" tabindex="-1"></a>  <span class="co"># Fix the layout without discarding the rest of the table&#39;s properties.</span></span>
+<span id="cb3-49"><a href="#cb3-49" tabindex="-1"></a>  <span class="co"># set_table_properties() rebuilds them all, which would reset the table&#39;s</span></span>
+<span id="cb3-50"><a href="#cb3-50" tabindex="-1"></a>  <span class="co"># alignment on the page and the Word accessibility fields.</span></span>
+<span id="cb3-51"><a href="#cb3-51" tabindex="-1"></a>  x<span class="sc">$</span>properties<span class="sc">$</span>layout <span class="ot">&lt;-</span> <span class="st">&quot;fixed&quot;</span></span>
 <span id="cb3-52"><a href="#cb3-52" tabindex="-1"></a></span>
 <span id="cb3-53"><a href="#cb3-53" tabindex="-1"></a>  x</span>
 <span id="cb3-54"><a href="#cb3-54" tabindex="-1"></a>}</span></code></pre></div>

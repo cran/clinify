@@ -28,6 +28,24 @@ clintable(mtcars) |>
   clin_add_titles(ft = flextable::flextable(head(iris, 2)))
 
 ## -----------------------------------------------------------------------------
+spec <- data.frame(
+  type = c("title", "title", "footnote", "footnote_page"),
+  text1 = c(
+    "Protocol: CDISCPILOT01",
+    "Table 14-2.01",
+    "Source: {FILE}",
+    "Kept off the table pages"
+  ),
+  text2 = c("Page {PAGE} of {NUMPAGES}", NA, NA, NA),
+  align = c("split", "center", "left", "left")
+)
+
+clintable(head(iris, 3)) |>
+  clin_add_titles(spec, tokens = list(FILE = "programs/t14-2-01.R")) |>
+  clin_add_footnotes(spec, tokens = list(FILE = "programs/t14-2-01.R")) |>
+  clin_add_footnote_page(spec)
+
+## -----------------------------------------------------------------------------
 clintable(mtcars) |>
   clin_add_titles(
     list(

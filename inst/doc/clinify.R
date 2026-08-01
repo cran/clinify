@@ -106,6 +106,14 @@ print(ct)
 # ct |>
 #   clin_col_widths(mpg = .2, cyl = .2, disp = .15, vs = .15)
 
+## ----eval=FALSE---------------------------------------------------------------
+# clintable(dat2) |>
+#   clin_row_height(body = 15.35, title = 11.4, footnote = 11.4)
+
+## ----eval=FALSE---------------------------------------------------------------
+# clintable(dat2) |>
+#   clin_header_pad(above = 18, below = 4, rule_to_body = 6)
+
 ## -----------------------------------------------------------------------------
 clintable(iris) |>
   clin_column_headers(
@@ -113,6 +121,16 @@ clintable(iris) |>
     Sepal.Width = c("Flowers", "Sepal", "Width"),
     Petal.Length = c("Petal", "Length"),
     Petal.Width = c("Petal", "Width")
+  )
+
+## -----------------------------------------------------------------------------
+clintable(iris) |>
+  clin_column_headers(
+    Sepal.Length = c("Flowers", "Sepal", "Value"),
+    Sepal.Width = c("Flowers", "Sepal", "Value"),
+    Petal.Length = c("Petal", "Value"),
+    Petal.Width = c("Petal", "Value"),
+    merge = "spanners"
   )
 
 ## -----------------------------------------------------------------------------
@@ -125,6 +143,16 @@ attr(iris2$Petal.Width, "label") <- "Flower||Petal||Width"
 clintable(iris2) |>
   align(align = "center", part = "header") |>
   align(align = "center", part = "body")
+
+## -----------------------------------------------------------------------------
+iris3 <- iris
+attr(iris3$Sepal.Length, "label") <- "Flower||Sepal||Value"
+attr(iris3$Sepal.Width, "label") <- "Flower||Sepal||Value"
+attr(iris3$Petal.Length, "label") <- "Flower||Petal||Value"
+attr(iris3$Petal.Width, "label") <- "Flower||Petal||Value"
+
+clintable(iris3) |>
+  clin_column_headers(merge = "spanners")
 
 ## ----write_clindoc, eval=FALSE------------------------------------------------
 # # Create a basic table
